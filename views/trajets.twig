@@ -1,0 +1,15 @@
+{% extends "layout.twig" %}
+
+{% block title %}Trajets{% endblock %}
+
+{% block content %}
+<h2>All Trajets</h2>
+<ul>
+  {% for t in trajets %}
+    <li>
+      {{ t.path }} ({{ t.distance }} km, {{ t.duration }}) –
+      For Livraison to <strong>{{ t.livraison.destination }}</strong>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

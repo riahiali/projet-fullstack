@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Livraison App{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <a href="/">All Livraisons</a> |
+    <a href="/trajets">All Trajets</a>
+  </nav>
+  <hr>
+  {% block content %}{% endblock %}
+  <script src="/socket.io/socket.io.js"></script>
+<script src="/socket.js"></script>
+</body>
+</html>

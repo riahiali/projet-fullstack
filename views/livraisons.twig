@@ -1,0 +1,15 @@
+{% extends "layout.twig" %}
+
+{% block title %}Livraisons{% endblock %}
+
+{% block content %}
+<h2>All Livraisons</h2>
+<ul>
+  {% for l in livraisons %}
+    <li>
+      <strong>{{ l.destination }}</strong> on {{ l.date|date("Y-m-d") }} -
+      <a href="/livraisons/{{ l._id }}">View Details</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

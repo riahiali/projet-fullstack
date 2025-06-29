@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block title %}Livraison Detail{% endblock %}
+
+{% block content %}
+<h2>Livraison to {{ livraison.destination }}</h2>
+<p><strong>Date:</strong> {{ livraison.date|date("Y-m-d") }}</p>
+
+<h3>Trajets:</h3>
+{% if livraison.trajets.length > 0 %}
+  <ul>
+    {% for t in livraison.trajets %}
+      <li>
+        Distance: {{ t.distance }} km, Duration: {{ t.duration }}, Path: {{ t.path }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No trajets found for this livraison.</p>
+{% endif %}
+{% endblock %}
